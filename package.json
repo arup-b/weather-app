@@ -1,0 +1,28 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Sample Weather App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arup-b/weather-app.git"
+  },
+  "keywords": [
+    "weather",
+    "app",
+    "http",
+    "learning"
+  ],
+  "author": "Arup Bhattacharya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arup-b/weather-app/issues"
+  },
+  "homepage": "https://github.com/arup-b/weather-app#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
