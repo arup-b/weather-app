@@ -1,20 +1,28 @@
-const axios = require('axios');
-//
-const url = 'http://api.weatherstack.com/current';
-const key = 'b9af1724183476fb06c5b97a37ac041d';
+const geocode = require('./utils/geocode');
+const forecast = require('./utils/forecast');
 
+const address = process.argv[2];
+console.log(address);
 
-//
+if (!address) {
+  console.log('Please provide an address');
+} else {
+  geocode(address, (str, { latitude, longitude, location }) => {
+    //
+    if (str != undefined) {
+      return console.log(str);
+    } else if (str == undefined) {
+      console.log('in app.js..   ', latitude, longitude, location);
+    }
+    //
 
-const params = {
-  access_key: key,
-  query: 'Kolkata',
-};
-axios.get(url, { params }).then((res)=>{
-    const apiResponse = res.data;
-    console.log(apiResponse);
-}).catch((err)=>{
-    console.log('err is '+err);
-});
+    // forecast(latitude, longitude, (error, forecastData) => {
+    //     if (error) {
+    //         return console.log(error)
+    //     }
 
-// start from chapter 6 - video 6 at 01:00 min.
+    //     console.log(location)
+    //     console.log(forecastData)
+    // })
+  });
+}
